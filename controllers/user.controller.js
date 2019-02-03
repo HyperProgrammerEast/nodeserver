@@ -1,5 +1,5 @@
-const User = require('./models/User')
-const Birthday = require('./models/Birthday')
+const User = require('./../models/User')
+const Birthday = require('./../models/Birthday')
 
 module.exports = {
     addUser: (req, res, next) => {

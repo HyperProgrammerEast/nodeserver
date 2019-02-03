@@ -6,8 +6,8 @@
  *  -reading or viewing
  */
 
- const Birthday = require('./models/Birthday')
- const User = require('./models/User')
+ const Birthday = require('./../models/Birthday')
+ const User = require('./../models/User')
  const fs = require('fs')
 //  const cloudinary = require('cloudinary')
 
