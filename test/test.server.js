@@ -1,6 +1,8 @@
 const chai = require('chai')
 const chaiHttp = require('chai-http')
 const server = require('../app')
+const should = chai.should();
+const apiPrefix = "/api/";
 
 // Call chai and initial http functions
 chai.use(chaiHttp)
@@ -13,13 +15,15 @@ describe('Simple Test', () => {
 });
 
 // Actual call to get all birthdays
-// describe('Birthdays', () => {
-//     it('Should call and get all birthdays in the database on /birthdays GET', (done) => {
-//         chai.request(server)
-//         .get('/birthdays')
-//         .end((err, res) => {
-//             res.should.have.status(200)
-//             done();
-//         })
-//     });
-// });
+describe('Birthdays', () => {
+    it('Should call and get all birthdays in the database on /birthdays GET', (done) => {
+        chai.request(server)
+        .get(apiPrefix + "birthdays")
+        .end((err, res) => {
+            res.should.be.json;
+            res.should.have.status(200);
+            res.body.should.be.a("array");
+            done();
+        })
+    });
+});

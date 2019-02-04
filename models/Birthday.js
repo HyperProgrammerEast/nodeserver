@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 let BirthdaySchema = new mongoose.Schema({
     text: String,
@@ -41,6 +41,6 @@ BirthdaySchema.methods.getUserBirthday = (_id) => {
     .then((birthday) => {
         return birthday;
     })
-}
+};
 
-module.export = mongoose.model("Birthday", BirthdaySchema);
+module.exports = mongoose.model("Birthday", BirthdaySchema);

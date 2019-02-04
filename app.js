@@ -41,6 +41,13 @@ app.use(helmet())
 app.use('/api', router)
 
 // Lets start the server
-app.listen(port, () => {
-    console.log(`Server started on port: ${port}`)
-})
+// app.listen(port, () => {
+//     console.log(`Server started on port: ${port}`)
+// })
+
+// Lets re-write the app listener to export 
+let server = app.listen(port, () => {
+    console.log(`Server started on port: ${port}`);
+});
+
+module.exports = server
