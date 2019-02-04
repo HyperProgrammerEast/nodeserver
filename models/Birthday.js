@@ -1,20 +1,20 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 let BirthdaySchema = new mongoose.Schema({
     text: String,
     title: String,
     description: String,
-    feature_img: String,
+    featureImage: String,
     claps: Number,
     author: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: "User"
     },
     comments: [
         {
             author: {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'User'
+                ref: "User"
             },
             text: String
         }
@@ -22,25 +22,25 @@ let BirthdaySchema = new mongoose.Schema({
 });
 
 BirthdaySchema.methods.clap = function() {
-    this.claps++
+    this.claps++;
     return this.save()
 }
 
 BirthdaySchema.methods.comment = (c) => {
-    this.comments.push(c)
+    this.comments.push(c);
     return this.save()
 }
 
-BirthdaySchema.methods.addAuthor = function (author_id) {
-    this.author = author_id
+BirthdaySchema.methods.addAuthor = function (authorId) {
+    this.author = authorId;
     return this.save()
 }
 
 BirthdaySchema.methods.getUserBirthday = (_id) => {
     BirthdaySchema.find({author: _id})
     .then((birthday) => {
-        return birthday
+        return birthday;
     })
 }
 
-module.export = mongoose.model('Birthday', BirthdaySchema)
+module.export = mongoose.model("Birthday", BirthdaySchema);
