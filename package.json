@@ -4,7 +4,7 @@
   "description": "Backend operating server for our birthday-app",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit"
+    "test": "nyc mocha --exit"
   },
   "author": "Carlos Almonte",
   "license": "MIT",
@@ -20,6 +20,8 @@
     "mongoose": "^5.4.9"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-http": "^4.2.1",
