@@ -4,7 +4,8 @@
   "description": "Backend operating server for our birthday-app",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha --exit"
+    "test": "nyc --reporter=html --reporter=text mocha --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Carlos Almonte",
   "license": "MIT",
@@ -25,6 +26,8 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-http": "^4.2.1",
+    "codecov": "^3.1.0",
+    "coveralls": "^3.0.2",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0"
   }
