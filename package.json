@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Backend operating server for our birthday-app",
   "main": "index.js",
+  "scripts": {
+    "test": "mocha --exit"
+  },
   "author": "Carlos Almonte",
   "license": "MIT",
   "dependencies": {
