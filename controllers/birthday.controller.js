@@ -31,7 +31,7 @@
                 if(err)
                     res.send(err)
                 else if (!birthday)
-                    res.send(400)
+                    res.sendStatus(400)
                 else {
                     return birthday.addAuthor(req.body.author_id)
                         .then((_birthday) => {
@@ -50,7 +50,7 @@
              if(err)
                 res.send(err)
              else if(!birthday)
-                res.send(404)
+                res.sendStatus(404)
              else
                 res.send(birthday)
              next()         
@@ -85,7 +85,7 @@
              if (err)
                 res.send(err)
              else if (!birthday)
-                res.send(400)
+                res.sendStatus(400)
              else 
                 res.send(birthday)
              next()         
