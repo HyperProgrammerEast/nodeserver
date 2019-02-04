@@ -4,7 +4,8 @@ node_js:
 cache:
   directories:
     - "node_modules"
-before_install: 
-    - pip install --user codecov
-after_success:
-    - codecov --file coverage/lcov.info --disable search          
+install:
+    - yarn add codecov
+script:
+    - nyc cover mocha --exit --reporter lcovonly -- -R spec
+    - codecov            
