@@ -32,4 +32,8 @@ UserSchema.methods.addFollower = (fs) => {
     this.followers.push(fs);
 };
 
+UserSchema.methods.addTruck = (fs) => {
+    this.trucks.push(fs);
+};
+
 module.exports = mongoose.model("User", UserSchema)

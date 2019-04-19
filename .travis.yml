@@ -8,7 +8,7 @@ install:
   - yarn run build
 
 script:
-- yarn test
+  - yarn test
 
 language: node_js
 
