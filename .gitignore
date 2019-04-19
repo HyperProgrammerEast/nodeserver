@@ -4,6 +4,11 @@ package-lock.json
 *.log
 *.gz
 
+# Custom files and docker files for the container
+.env
+data/
+docker/data/
+
 # Windows
 Thumbs.db
 ehthumbs.db

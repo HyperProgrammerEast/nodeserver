@@ -1,0 +1,7 @@
+FROM docker_backend
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
+RUN chmod +x /wait
+ENV NODE_ENV dev
+RUN yarn install && yarn global add mocha
+ARG port=5000
+CMD /wait && mocha test/test.server.js --exit
